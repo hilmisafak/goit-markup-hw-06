@@ -658,3 +658,134 @@ ul {
   width: 24px;
   height: 24px;
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .header-container,
+  .address-list,
+  .nav-list,
+  .team-card,
+  .project-card,
+  .footer-container,
+  .footer-right .subscribe-form {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .address {
+    margin-left: 0;
+  }
+
+  .feature-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-item-icon {
+    display: none;
+  }
+
+  .feature-list h3 {
+    text-align: center;
+  }
+
+  .team-card-item {
+    margin-bottom: 32px;
+  }
+
+  .project-card-item {
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 48px;
+  }
+
+  .footer-left p {
+    text-align: left;
+  }
+
+  .footer-column {
+    flex: 1 1 100%;
+    margin-bottom: 48px;
+  }
+
+  .footer-right .form-input,
+  .modal-form input,
+  .modal-form textarea {
+    width: 100%;
+  }
+
+  .modal {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1018px) {
+  .container {
+    padding: 0 24px;
+    max-width: 768px;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+  }
+
+  .header .logo {
+    text-align: left;
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    flex: 1 1 100%;
+    gap: 40px;
+  }
+
+  .address-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    flex: 1 1 100%;
+    gap: 4px;
+  }
+
+  .team-card,
+  .project-card,
+  .footer-container,
+  .footer-right {
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+  }
+
+  .project-card-item {
+    flex: 1 1 calc(50% - 24px);
+    max-width: calc(50% - 24px);
+  }
+
+  .feature-item-icon {
+    display: none;
+  }
+
+  .footer-column {
+    flex: 1 1 48%;
+  }
+
+  .footer-right {
+    width: 100%;
+  }
+
+  .modal {
+    width: 90%;
+    height: 90%;
+  }
+}
