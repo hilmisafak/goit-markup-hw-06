@@ -784,6 +784,21 @@ ul {
     width: 100%;
   }
 
+  .modal-form {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .modal-form input {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .modal-form button {
+    white-space: nowrap;
+  }
+
   .modal {
     width: 400px;
   }
