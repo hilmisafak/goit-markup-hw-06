@@ -659,6 +659,7 @@ ul {
   height: 24px;
 }
 
+/* Mobile */
 @media screen and (max-width: 767px) {
   .navbar,
   .address {
@@ -750,6 +751,7 @@ ul {
   }
 }
 
+/* Tablet */
 @media screen and (min-width: 768px) and (max-width: 1157px) {
   .container {
     padding: 0 24px;
@@ -830,6 +832,7 @@ ul {
   }
 }
 
+/* Mobile Menu */
 .mobile-menu {
   position: fixed;
   top: 0;
