@@ -940,7 +940,6 @@ ul {
   display: flex;
   justify-content: center;
   gap: 24px;
-  margin-bottom: 40px;
 }
 
 .mobile-socials-list-item .link .icon {
