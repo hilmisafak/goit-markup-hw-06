@@ -9,6 +9,10 @@
     />
     <link
       rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.css"
+    />
+    <link
+      rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css"
     />
     <link rel="stylesheet" href="css/styles.css" />
@@ -21,7 +25,7 @@
         <a class="logo logo-header" href="/"
           ><span class="logo-web">WEB</span>STUDIO</a
         >
-        <button class="header-menu-btn">
+        <button class="header-menu-btn" id="header-mobile-menu-btn">
           <svg class="icon">
             <use href="./images/icons.svg#icon-menu"></use>
           </svg>
@@ -57,7 +61,7 @@
       </div>
     </header>
 
-    <div class="mobile-menu is-open">
+    <div class="mobile-menu is-hidden" id="mobile-menu">
       <button type="button" class="mobile-menu-close" id="mobile-close-btn">
         <svg class="icon">
           <use href="./images/icons.svg#icon-vector-4"></use>
@@ -129,7 +133,9 @@
       <section class="sec-1 section">
         <div class="container">
           <h1 class="title">Effective Solutions for Your Business</h1>
-          <button class="btn" type="button">Order Service</button>
+          <button class="btn" type="button" id="order-service-btn">
+            Order Service
+          </button>
         </div>
       </section>
 
@@ -198,6 +204,10 @@
           <ul class="team-card">
             <li class="team-card-item">
               <img
+                srcset="
+                  ./images/mark-guerrero-photo.jpg    1x,
+                  ./images/mark-guerrero-photo@2x.jpg 2x
+                "
                 src="./images/mark-guerrero-photo.jpg"
                 alt="profile photo"
                 width="264"
@@ -259,6 +269,10 @@
 
             <li class="team-card-item">
               <img
+                srcset="
+                  ./images/tom-ford-photo.jpg    1x,
+                  ./images/tom-ford-photo@2x.jpg 2x
+                "
                 src="./images/tom-ford-photo.jpg"
                 alt="profile photo"
                 width="264"
@@ -320,6 +334,10 @@
 
             <li class="team-card-item">
               <img
+                srcset="
+                  ./images/camila-garcia-photo.jpg    1x,
+                  ./images/camila-garcia-photo@2x.jpg 2x
+                "
                 src="./images/camila-garcia-photo.jpg"
                 alt="profile photo"
                 width="264"
@@ -381,6 +399,10 @@
 
             <li class="team-card-item">
               <img
+                srcset="
+                  ./images/daniel-wilson-photo.jpg    1x,
+                  ./images/daniel-wilson-photo@2x.jpg 2x
+                "
                 src="./images/daniel-wilson-photo.jpg"
                 alt="profile photo"
                 width="264"
@@ -451,6 +473,10 @@
             <li class="project-card-item">
               <div class="project-top">
                 <img
+                  srcset="
+                    ./images/banking-app.jpg    1x,
+                    ./images/banking-app@2x.jpg 2x
+                  "
                   src="./images/banking-app.jpg"
                   alt="banking app"
                   width="360"
@@ -474,6 +500,10 @@
             <li class="project-card-item">
               <div class="project-top">
                 <img
+                  srcset="
+                    ./images/cashless-payment.jpg    1x,
+                    ./images/cashless-payment@2x.jpg 2x
+                  "
                   src="./images/cashless-payment.jpg"
                   alt="cashless payment"
                   width="360"
@@ -497,6 +527,10 @@
             <li class="project-card-item">
               <div class="project-top">
                 <img
+                  srcset="
+                    ./images/meditation-app.jpg    1x,
+                    ./images/meditation-app@2x.jpg 2x
+                  "
                   src="./images/meditation-app.jpg"
                   alt="meditation app"
                   width="360"
@@ -520,6 +554,10 @@
             <li class="project-card-item">
               <div class="project-top">
                 <img
+                  srcset="
+                    ./images/taxi-service.jpg    1x,
+                    ./images/taxi-service@2x.jpg 2x
+                  "
                   src="./images/taxi-service.jpg"
                   alt="taxi service"
                   width="360"
@@ -543,6 +581,10 @@
             <li class="project-card-item">
               <div class="project-top">
                 <img
+                  srcset="
+                    ./images/screen-illustrations.jpg    1x,
+                    ./images/screen-illustrations@2x.jpg 2x
+                  "
                   src="./images/screen-illustrations.jpg"
                   alt="screen illustrations"
                   width="360"
@@ -566,6 +608,10 @@
             <li class="project-card-item">
               <div class="project-top">
                 <img
+                  srcset="
+                    ./images/online-courses.jpg    1x,
+                    ./images/online-courses@2x.jpg 2x
+                  "
                   src="./images/online-courses.jpg"
                   alt="online courses"
                   width="360"
@@ -589,8 +635,8 @@
         </div>
       </section>
 
-      <div class="backdrop is-hidden" id="modal-backdrop">
-        <div class="modal">
+      <div class="backdrop is-hidden" id="modal-menu">
+        <div class="modal" id="modal-backdrop">
           <button type="button" class="modal-close" id="modal-close-btn">
             <svg class="icon">
               <use href="./images/icons.svg#icon-vector-4"></use>
@@ -730,4 +776,40 @@
       </div>
     </footer>
   </body>
+
+  <!-- Butonların açıp kapatma görevleri için gerekli olan js kodları. -->
+  <script>
+    const mobilMenuCloseBtn = document.getElementById("mobile-close-btn");
+    const mobilMenuOpenBtn = document.getElementById("header-mobile-menu-btn");
+    const modalMenuCloseBtn = document.getElementById("modal-close-btn");
+    const modalMenuOpenBtn = document.getElementById("order-service-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const modalMenu = document.getElementById("modal-menu");
+    const modalBackdrop = (document.getElementById = "modal-backdrop");
+    const body = document.body;
+
+    mobilMenuOpenBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("is-hidden");
+      mobileMenu.classList.add("is-open");
+      body.classList.add("no-scroll");
+    });
+
+    mobilMenuCloseBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("is-open");
+      mobileMenu.classList.add("is-hidden");
+      body.classList.remove("no-scroll");
+    });
+
+    modalMenuOpenBtn.addEventListener("click", () => {
+      modalMenu.classList.remove("is-hidden");
+      modalMenu.classList.add("is-open");
+      body.classList.add("no-scroll");
+    });
+
+    modalMenuCloseBtn.addEventListener("click", () => {
+      modalMenu.classList.remove("is-open");
+      modalMenu.classList.add("is-hidden");
+      body.classList.remove("no-scroll");
+    });
+  </script>
 </html>
